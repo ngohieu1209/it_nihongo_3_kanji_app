@@ -1,6 +1,5 @@
 class KanjisController < ApplicationController
   before_action :set_kanji, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
   
   # GET /kanjis or /kanjis.json
   def index
@@ -9,6 +8,7 @@ class KanjisController < ApplicationController
 
   # GET /kanjis/1 or /kanjis/1.json
   def show
+      @kanji_comment = KanjiComment.new
   end
 
   # GET /kanjis/new
